@@ -10,5 +10,5 @@
 
    No trailing slash. See README-APPSTORE.md for hosting + deployment notes. */
 window.WARDROBE_CONFIG = {
-  apiBase: '',
+  apiBase: 'https://gulaywardrobe.com',
 };

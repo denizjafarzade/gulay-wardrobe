@@ -107,7 +107,15 @@ app.use(
     },
   })
 );
-app.use(express.static(path.join(__dirname, 'public')));
+// The native app bundles its own copy of public/ (Capacitor's webDir) and
+// only ever calls the /api/* and /uploads/* routes above — it never loads
+// index.html/app.js from the server. So the public website below is optional:
+// set SERVE_WEBSITE=false in .env on a server you don't want browsable
+// (e.g. your production deploy) to turn it off and keep only the API live.
+// Left on by default so `npm start` + a browser still works for local dev.
+if (process.env.SERVE_WEBSITE !== 'false') {
+  app.use(express.static(path.join(__dirname, 'public')));
+}
 
 // ---- Items ----
 app.get('/api/items', (req, res) => {
