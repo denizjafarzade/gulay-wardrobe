@@ -1,0 +1,22 @@
+{
+  "name": "gulay-wardrobe",
+  "version": "1.0.0",
+  "description": "Gülay's personal online wardrobe",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@capacitor/app": "^8.4.2",
+    "@capacitor/cli": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/ios": "^8.4.2",
+    "@capacitor/local-notifications": "^8.4.2",
+    "cheerio": "^1.2.0",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5"
+  }
+}

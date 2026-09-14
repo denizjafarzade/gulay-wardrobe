@@ -1,0 +1,9 @@
+{
+  "appId": "com.deniz.gulaywardrobe",
+  "appName": "Gülay's Wardrobe",
+  "webDir": "public",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#faf5f0"
+  }
+}

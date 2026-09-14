@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Wardrobe" />
+  <meta name="theme-color" content="#faf5f0" />
+  <title>Gülay's Wardrobe</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23a95f6e'/><text x='50' y='68' font-family='Georgia,serif' font-style='italic' font-size='58' fill='white' text-anchor='middle'>G</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-scene">
+      <div class="intro-inside">
+        <span class="hanger h1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="1.4"/><path d="M12 5.6v2.2"/><path d="M12 7.8c0-1.4 2.4-1.4 2.4-3"/><path d="M12 7.8 3 15.5a1.3 1.3 0 0 0 .8 2.3h16.4a1.3 1.3 0 0 0 .8-2.3z"/><path d="M7 15.5h10"/></svg></span>
+        <span class="hanger h2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="1.4"/><path d="M12 5.6v2.2"/><path d="M12 7.8c0-1.4 2.4-1.4 2.4-3"/><path d="M12 7.8 3 15.5a1.3 1.3 0 0 0 .8 2.3h16.4a1.3 1.3 0 0 0 .8-2.3z"/><path d="M7 15.5h10"/></svg></span>
+        <span class="hanger h3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.2" r="1.4"/><path d="M12 5.6v2.2"/><path d="M12 7.8c0-1.4 2.4-1.4 2.4-3"/><path d="M12 7.8 3 15.5a1.3 1.3 0 0 0 .8 2.3h16.4a1.3 1.3 0 0 0 .8-2.3z"/><path d="M7 15.5h10"/></svg></span>
+        <span class="rail"></span>
+      </div>
+      <div class="door door-left">
+        <span class="door-panel"></span>
+        <span class="door-monogram">G</span>
+        <span class="knob"></span>
+      </div>
+      <div class="door door-right">
+        <span class="door-panel"></span>
+        <span class="knob"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sparkle-field" id="sparkleField" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">G</span>
+      <span class="brand-name">Gülay's <em>Wardrobe</em></span>
+    </div>
+    <nav class="nav">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="closet">Closet</button>
+      <button class="nav-link" data-page="studio">Studio</button>
+      <button class="nav-link" data-page="planner">Planner</button>
+      <button class="nav-link" data-page="chat">Chat</button>
+      <span class="nav-underline" id="navUnderline"></span>
+    </nav>
+    <button class="hamburger-btn" id="hamburgerBtn" data-icon="menu" title="Open menu" aria-label="Open menu"></button>
+  </header>
+
+  <!-- Mobile nav drawer, slides in from the left -->
+  <div class="nav-drawer-backdrop" id="navDrawerBackdrop" hidden>
+    <nav class="nav-drawer" id="navDrawer">
+      <div class="nav-drawer-head">
+        <span class="brand-mark">G</span>
+        <span class="brand-name">Gülay's <em>Wardrobe</em></span>
+        <button class="modal-close" id="navDrawerClose" data-icon="x"></button>
+      </div>
+      <button class="nav-link nav-drawer-link" data-page="home" data-icon="home">Home</button>
+      <button class="nav-link nav-drawer-link" data-page="closet" data-icon="closet">Closet</button>
+      <button class="nav-link nav-drawer-link" data-page="studio" data-icon="studio">Studio</button>
+      <button class="nav-link nav-drawer-link" data-page="planner" data-icon="planner">Planner</button>
+      <button class="nav-link nav-drawer-link" data-page="chat" data-icon="chat">Chat</button>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ================= HOME (dashboard) ================= -->
+    <section class="page active" id="page-home">
+      <div class="dash-hero">
+        <h1 class="hero-title dash-title">Xoş Gəldin, <span class="script">Gülay</span></h1>
+        <div class="dash-quick-actions">
+          <button class="btn btn-primary" data-goto="studio" data-icon="sparkle">Create a look</button>
+          <button class="btn btn-ghost" data-goto="closet">Browse closet</button>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <div class="today-card dash-card" id="todayCard" data-goto="planner">
+          <div class="today-head">
+            <span class="today-eyebrow" id="todayDate">Today</span>
+          </div>
+          <div class="today-body" id="todayBody">
+            <span class="today-icon" data-icon="planner"></span>
+            <p class="today-text">Plan what you're wearing today</p>
+          </div>
+        </div>
+        <div class="stat-card dash-card" data-goto="closet">
+          <span class="stat-num" id="statPieces">0</span>
+          <span class="stat-label">Pieces</span>
+        </div>
+        <div class="stat-card dash-card" data-goto="looks">
+          <span class="stat-num" id="statLooks">0</span>
+          <span class="stat-label">Saved looks</span>
+        </div>
+        <div class="stat-card dash-card" data-goto="closet" data-filter="favorites">
+          <span class="stat-num" id="statFavs">0</span>
+          <span class="stat-label">Favorites</span>
+        </div>
+      </div>
+
+      <div class="dash-countdowns">
+        <div class="dash-section-head">
+          <h3>Countdowns</h3>
+          <button class="btn-icon-sm" id="addCountdownBtnHome" data-icon="plus" title="Add a countdown" aria-label="Add a countdown"></button>
+        </div>
+        <div class="countdown-row" id="countdownRowHome"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= CHAT (full screen, ChatGPT-style, multiple threads) ================= -->
+    <section class="page" id="page-chat">
+      <div class="chat-layout">
+        <aside class="chat-sidebar" id="chatSidebar">
+          <button class="btn btn-primary chat-new-btn" id="chatNewBtn" data-icon="plus">New chat</button>
+          <div class="chat-thread-list" id="chatThreadList"></div>
+        </aside>
+        <div class="chat-main">
+          <div class="chat-messages" id="chatMessages"></div>
+          <form class="chat-input-row" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Ask me anything — your plans, your closet, or just say hi" maxlength="300" autocomplete="off" />
+            <button type="submit" class="btn btn-primary" id="chatSend" data-icon="sparkle"></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOSET ================= -->
+    <section class="page" id="page-closet">
+      <div class="page-head">
+        <h2>The Closet</h2>
+        <p>Everything you own, at a glance.</p>
+      </div>
+      <div class="closet-tools">
+        <div class="chips" id="categoryChips"></div>
+        <input type="search" id="searchInput" class="search" placeholder="Search your closet…" />
+      </div>
+      <div class="grid" id="closetGrid"></div>
+      <div class="empty" id="closetEmpty" hidden>
+        <div class="empty-icon" data-icon="basket"></div>
+        <h3>Your closet is waiting</h3>
+        <p>Add your first piece and start building your collection.</p>
+        <button class="btn btn-primary" id="emptyAddBtn" data-icon="plus">Add a piece</button>
+      </div>
+      <button class="fab" id="addFab" title="Add a piece" aria-label="Add a piece" data-icon="plus"></button>
+    </section>
+
+    <!-- ================= ADD (modal) ================= -->
+    <div class="modal-backdrop" id="addBackdrop" hidden>
+    <div class="modal modal-add" id="addModal">
+      <button class="modal-close" id="addModalClose" data-icon="x"></button>
+      <div class="page-head" style="padding-top:0">
+        <h2>New Piece</h2>
+        <p>Paste a link from any store, or add a photo yourself.</p>
+      </div>
+      <div class="link-import" id="linkImport">
+        <span class="li-icon" data-icon="link"></span>
+        <input type="url" id="linkInput" class="link-field" placeholder="Paste a product link — e.g. zara.com/…" />
+        <button type="button" class="btn btn-primary" id="linkFetch">Fetch</button>
+      </div>
+      <div class="link-status" id="linkStatus" hidden></div>
+      <form class="add-form" id="addForm">
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="photoInput" accept="image/*" hidden />
+          <div class="dropzone-inner" id="dropzoneInner">
+            <span class="dz-icon" data-icon="camera"></span>
+            <span class="dz-text">Tap to add a photo<br/><small>or drag & drop it here</small></span>
+          </div>
+          <img id="photoPreview" class="photo-preview" hidden alt="Preview" />
+        </label>
+        <div class="fields">
+          <div class="field">
+            <label for="fName">Name</label>
+            <input id="fName" type="text" placeholder="e.g. Silk blouse with bow" maxlength="80" />
+          </div>
+          <div class="field">
+            <label for="fCategory">Category</label>
+            <select id="fCategory">
+              <option>Tops</option>
+              <option>Bottoms</option>
+              <option>Dresses</option>
+              <option>Outerwear</option>
+              <option>Shoes</option>
+              <option>Bags</option>
+              <option>Accessories</option>
+            </select>
+          </div>
+          <button type="button" class="more-details-toggle" id="moreDetailsToggle" data-icon="plus">More details (color, store, price, notes)</button>
+          <div class="more-details" id="moreDetails" hidden>
+            <div class="field">
+              <label for="fColor">Color</label>
+              <input id="fColor" type="text" placeholder="e.g. Dusty rose" maxlength="40" />
+            </div>
+            <div class="field">
+              <label for="fStore">Store / Brand</label>
+              <input id="fStore" type="text" placeholder="e.g. Zara, Mango, a little boutique…" maxlength="60" />
+            </div>
+            <div class="field">
+              <label for="fPrice">Price</label>
+              <input id="fPrice" type="number" min="0" step="0.01" placeholder="e.g. 45" />
+            </div>
+            <div class="field">
+              <label for="fNotes">Notes</label>
+              <textarea id="fNotes" rows="3" placeholder="Anything to remember — fit, occasion, what it pairs with…" maxlength="300"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-big" id="addSubmit" data-icon="sparkle">Add to my closet</button>
+        </div>
+      </form>
+    </div>
+    </div>
+
+    <!-- ================= STUDIO ================= -->
+    <section class="page" id="page-studio">
+      <div class="page-head">
+        <h2>Outfit Studio</h2>
+        <p>Pick pieces and see them on Gülay, or revisit looks you've saved.</p>
+      </div>
+      <div class="tab-switch" id="studioTabs">
+        <button class="tab-btn active" data-studiotab="create" data-icon="sparkle">Create</button>
+        <button class="tab-btn" data-studiotab="saved" data-icon="heartFilled">Saved Looks</button>
+      </div>
+
+      <div class="studio-panel" id="panel-create">
+      <div class="studio-wrap" id="studioWrap">
+        <!-- left: the generated look -->
+        <div class="look-panel">
+          <div class="look-canvas" id="lookCanvas">
+            <div class="look-placeholder" id="lookPlaceholder">
+              <span class="lp-icon" data-icon="mirror"></span>
+              <p>Gülay wearing your look<br/>will appear here</p>
+            </div>
+          </div>
+          <div class="look-actions" id="lookResultActions" hidden>
+            <a class="btn btn-ghost" id="downloadLook" download="gulay-look.png" data-icon="download">Save image</a>
+            <button class="btn btn-ghost" id="regenLook" data-icon="refresh">Again</button>
+          </div>
+        </div>
+
+        <!-- right: the clothes list + controls -->
+        <div class="builder">
+          <div class="builder-row">
+            <button class="btn btn-ghost" id="modelPhotoBtn" data-icon="camera"><span id="modelPhotoLabel">Gülay's photos</span></button>
+            <button class="btn btn-ghost" id="shuffleBtn" data-icon="dice">Surprise me</button>
+          </div>
+
+          <div class="pieces-list" id="piecesList"></div>
+
+          <div class="instr">
+            <label for="lookInstr">Styling notes <span>(optional)</span></label>
+            <textarea id="lookInstr" rows="2" maxlength="300"
+              placeholder="e.g. shirt tucked in, top two buttons open, full-body over the feet"></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-big" id="generateBtn" data-icon="sparkle">Generate on Gülay</button>
+
+          <div class="save-look">
+            <input type="text" id="lookName" placeholder="Name this look…" maxlength="60" />
+            <button class="btn btn-ghost" id="saveLookBtn" data-icon="heartFilled">Save look</button>
+          </div>
+        </div>
+      </div>
+      <div class="empty" id="studioEmpty" hidden>
+        <div class="empty-icon" data-icon="mirror"></div>
+        <h3>Nothing to style yet</h3>
+        <p>Add a few pieces to your closet first, then come back to play.</p>
+        <button class="btn btn-primary" data-goto="add" data-icon="plus">Add a piece</button>
+      </div>
+      </div>
+
+      <div class="studio-panel" id="panel-saved" hidden>
+      <div class="looks-grid" id="looksGrid"></div>
+      <div class="empty" id="looksEmpty" hidden>
+        <div class="empty-icon" data-icon="heartOutline"></div>
+        <h3>No saved looks yet</h3>
+        <p>Compose something lovely in Create and save it here.</p>
+        <button class="btn btn-primary" data-studiotab-goto="create">Start creating</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- ================= PLANNER ================= -->
+    <section class="page" id="page-planner">
+      <div class="page-head">
+        <h2>Planner</h2>
+        <p>What she's wearing (and doing) each day.</p>
+      </div>
+
+      <div class="countdown-row" id="countdownRow"></div>
+      <div class="countdown-addrow">
+        <button class="btn btn-ghost" id="addCountdownBtn" data-icon="plus">Add a countdown</button>
+      </div>
+
+      <div class="cal-toolbar">
+        <button class="btn btn-ghost cal-nav" id="calPrev" data-icon="chevronLeft"></button>
+        <h3 class="cal-month" id="calMonthLabel"></h3>
+        <button class="btn btn-ghost cal-nav" id="calNext" data-icon="chevronRight"></button>
+        <button class="btn btn-ghost cal-today" id="calTodayBtn">Today</button>
+      </div>
+      <div class="cal-weekdays" id="calWeekdays"></div>
+      <div class="cal-grid" id="calGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- Planner day-detail modal -->
+  <div class="modal-backdrop" id="dayBackdrop" hidden>
+    <div class="modal modal-day" id="dayModal">
+      <button class="modal-close" id="dayModalClose" data-icon="x"></button>
+      <p class="onboard-eyebrow" id="dayModalDate">Monday, 1 January</p>
+      <div class="day-briefing" id="dayBriefing" hidden></div>
+
+      <label class="day-field-label">Outfit</label>
+      <div class="day-outfit-picker" id="dayOutfitPicker"></div>
+
+      <label class="day-field-label" for="dayNote">Note / to-do</label>
+      <textarea id="dayNote" rows="2" maxlength="200" placeholder="e.g. Interview at 2pm, pack the blue bag…"></textarea>
+
+      <label class="day-field-label" for="dayRemind">Remind me at</label>
+      <div class="day-remind-row">
+        <input type="time" id="dayRemind" value="08:00" />
+        <label class="day-remind-toggle"><input type="checkbox" id="dayRemindOn" /> Notify me</label>
+      </div>
+
+      <div class="day-actions">
+        <button class="btn btn-primary btn-big" id="daySaveBtn" data-icon="save">Save day</button>
+        <button class="btn btn-danger" id="dayClearBtn">Clear day</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add-countdown modal -->
+  <div class="modal-backdrop" id="countdownBackdrop" hidden>
+    <div class="modal modal-day" id="countdownModal">
+      <button class="modal-close" id="countdownModalClose" data-icon="x"></button>
+      <p class="onboard-eyebrow">New countdown</p>
+      <label class="day-field-label" for="cdLabel">What's coming up?</label>
+      <input type="text" id="cdLabel" maxlength="60" placeholder="e.g. Birthday, School ends, Trip to Baku…" />
+      <label class="day-field-label" for="cdDate">Date</label>
+      <input type="date" id="cdDate" />
+      <label class="day-field-label">Icon</label>
+      <div class="cd-icon-picker" id="cdIconPicker"></div>
+      <div class="day-actions">
+        <button class="btn btn-primary btn-big" id="cdSaveBtn" data-icon="plus">Add countdown</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item detail modal -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" id="itemModal">
+      <button class="modal-close" id="modalClose" data-icon="x"></button>
+      <button class="modal-nav prev" id="modalPrevBtn" data-icon="chevronLeft" aria-label="Previous piece"></button>
+      <button class="modal-nav next" id="modalNextBtn" data-icon="chevronRight" aria-label="Next piece"></button>
+      <div class="modal-photo"><img id="modalPhoto" alt="" /></div>
+      <div class="modal-info">
+        <h3 id="modalName"></h3>
+        <p class="modal-meta" id="modalMeta"></p>
+        <p class="modal-price" id="modalPrice" hidden></p>
+        <p class="modal-notes" id="modalNotes"></p>
+        <div class="modal-tryon" id="modalTryon" hidden>
+          <div class="tryon-result" id="tryonResult"></div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="modalTryonBtn" data-icon="sparkle">Try on Gülay</button>
+          <button class="btn btn-ghost" id="modalFav" data-icon="heartOutline">Favorite</button>
+          <button class="btn btn-danger" id="modalDelete">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- First-time photo profile onboarding (mandatory on first launch, stays saved after) -->
+  <div class="onboard-backdrop" id="onboardBackdrop" hidden>
+    <div class="onboard" id="onboard">
+      <button class="modal-close" id="onboardClose" data-icon="x" hidden></button>
+      <div class="onboard-head">
+        <p class="onboard-eyebrow"><span class="eyebrow-rule"></span>Let's set you up<span class="eyebrow-rule"></span></p>
+        <h3 id="onboardTitle">A few photos of you</h3>
+        <p class="onboard-sub" id="onboardSub">The more angles you add, the more the looks will really look like you.</p>
+      </div>
+      <div class="onboard-steps" id="onboardSteps"></div>
+      <div class="onboard-foot">
+        <span class="onboard-progress" id="onboardProgress"></span>
+        <button class="btn btn-primary" id="onboardDone" data-icon="sparkle">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Music mini-player + library -->
+  <div class="mini-player" id="miniPlayer" hidden>
+    <span class="mp-note" data-icon="musicNote"></span>
+    <div class="mp-info">
+      <span class="mp-title" id="mpTitle">—</span>
+      <span class="mp-artist" id="mpArtist"></span>
+    </div>
+    <button class="mp-btn" id="mpPrev" data-icon="skipPrev" aria-label="Previous"></button>
+    <button class="mp-btn mp-play" id="mpPlay" data-icon="play" aria-label="Play"></button>
+    <button class="mp-btn" id="mpNext" data-icon="skipNext" aria-label="Next"></button>
+  </div>
+  <div class="modal-backdrop" id="musicBackdrop" hidden>
+    <div class="modal modal-day" id="musicModal">
+      <button class="modal-close" id="musicModalClose" data-icon="x"></button>
+      <p class="onboard-eyebrow">Your music</p>
+      <form id="musicAddForm">
+        <label class="dropzone dropzone-music" id="musicDropzone">
+          <input type="file" id="musicFileInput" accept="audio/*" hidden />
+          <span data-icon="musicNote" class="icon-xl"></span>
+          <span class="dz-text">Tap to add a song<br/><small>MP3, M4A, WAV from your phone</small></span>
+        </label>
+      </form>
+      <div class="song-list" id="songList"></div>
+    </div>
+  </div>
+  <audio id="audioEl" preload="none"></audio>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="icons.js"></script>
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

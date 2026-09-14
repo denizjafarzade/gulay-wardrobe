@@ -1,0 +1,21 @@
+# secrets — never commit
+.env
+
+# dependencies
+node_modules/
+
+# Gülay's private data (photos + database) — stays on your machine / her phone
+data/
+uploads/
+
+# build output
+ios/App/build/
+ios/App/App/public/
+DerivedData/
+*.ipa
+*.xcarchive
+
+# OS junk
+.DS_Store
+Thumbs.db
+backups/
